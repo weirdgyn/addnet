@@ -1,2 +1,2 @@
-from addnet.addnet_plugin import AddNetPlugin
+from addnet_plugin import AddNetPlugin
 AddNetPlugin().register()

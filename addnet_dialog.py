@@ -7,8 +7,9 @@
 
 import wx
 
-from addnet.addnet_gui import addnet_gui
-from addnet.addnet_plugin import __version__
+from addnet_gui import addnet_gui
+
+__version__ = "0.1"
 
 class AddNetDialog(addnet_gui):
     """Class that gathers all the Gui control"""

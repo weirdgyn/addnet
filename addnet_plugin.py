@@ -9,9 +9,7 @@ import wx
 import os
 
 from pcbnew import ActionPlugin, GetBoard
-from addnet.addnet_dialog import InitAddNetDialog
-
-__version__ = "0.1"
+from addnet_dialog import InitAddNetDialog
 
 class AddNetPlugin(ActionPlugin):
     """Class that gathers the actionplugin stuff"""
