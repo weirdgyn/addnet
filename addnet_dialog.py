@@ -6,9 +6,11 @@
 #
 
 import wx
+import pcbnew
 
-from .addnet_gui import addnet_gui
-from .addnet_plugin import __version__
+from addnet_gui import addnet_gui
+
+__version__ = "0.1"
 
 class AddNetDialog(addnet_gui):
     """Class that gathers all the Gui control"""
@@ -16,7 +18,11 @@ class AddNetDialog(addnet_gui):
     def __init__(self, board):
         """Init the brand new instance"""
         super(AddNetDialog, self).__init__(None)
-        self.board = board
+        self.board = pcbnew.GetBoard()
+        modules = board.GetModules()
+        for mod in modules:
+            self.m_cbComponent.Append(mod.GetReference())
+
         self.SetTitle("AddNet (v{0})".format(__version__))
         self.Bind(wx.EVT_CLOSE, self.onCloseWindow)
         self.m_btnCancel.Bind(wx.EVT_BUTTON, self.onCloseWindow)
