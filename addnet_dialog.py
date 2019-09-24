@@ -25,6 +25,7 @@ class AddNetDialog(addnet_gui):
 
         self.SetTitle("AddNet (v{0})".format(__version__))
         self.Bind(wx.EVT_CLOSE, self.onCloseWindow)
+        self.m_cbComponent.Bind(wx.EVT_COMBOBOX, self.onComponentSelect)
         self.m_btnCancel.Bind(wx.EVT_BUTTON, self.onCloseWindow)
         self.m_btnOk.Bind(wx.EVT_BUTTON, self.onProcessAction)
 
@@ -34,6 +35,14 @@ class AddNetDialog(addnet_gui):
 
     def onCloseWindow(self, event):
         self.Destroy()
+
+    def onComponentSelect(self, event):
+        modules = self.board.GetModules()
+        for mod in modules:
+            if mod.GetReference() == self.m_cbComponent.GetStringSelection():
+                for pad in mod.Pads():
+                    self.m_cbPad.Append("1")
+                break
 
 
 def InitAddNetDialog(board):
