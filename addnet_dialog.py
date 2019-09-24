@@ -19,31 +19,82 @@ class AddNetDialog(addnet_gui):
         """Init the brand new instance"""
         super(AddNetDialog, self).__init__(None)
         self.board = pcbnew.GetBoard()
-        modules = board.GetModules()
-        for mod in modules:
-            self.m_cbComponent.Append(mod.GetReference())
-
+        self.modules = self.board.GetModules()
         self.SetTitle("AddNet (v{0})".format(__version__))
         self.Bind(wx.EVT_CLOSE, self.onCloseWindow)
-        self.m_cbComponent.Bind(wx.EVT_COMBOBOX, self.onComponentSelect)
+        self.SelectedPad = None
+        self.SelectedModule = None
+        self.m_cbModule.Bind(wx.EVT_COMBOBOX, self.onModuleSelect)
+        self.m_cbPad.Bind(wx.EVT_COMBOBOX, self.onPadSelect)
         self.m_btnCancel.Bind(wx.EVT_BUTTON, self.onCloseWindow)
         self.m_btnOk.Bind(wx.EVT_BUTTON, self.onProcessAction)
+        self.PopulateModules()
 
     def onProcessAction(self, event):
-        """Executes the requested action"""
-        self.Destroy()
+        self.AddNet()
 
     def onCloseWindow(self, event):
         self.Destroy()
 
-    def onComponentSelect(self, event):
-        modules = self.board.GetModules()
-        for mod in modules:
-            if mod.GetReference() == self.m_cbComponent.GetStringSelection():
-                for pad in mod.Pads():
-                    self.m_cbPad.Append("1")
+    def onModuleSelect(self, event):
+        self.PopulatePads()
+
+    def onPadSelect(self, event):
+        self.SelectPad()
+
+    def SelectPad(self):
+        if not self.SelectedModule == None:
+            pads = self.SelectedModule.Pads()
+            for pad in pads:
+                if pad.GetName() == self.m_cbPad.GetStringSelection():
+                    self.SelectedPad = pad
+                    self.m_txtPadNet.ChangeValue(pad.GetNetname())
+                    break
+        else:
+            self.SelectedPad = None       
+
+    def PopulatePads(self):
+        self.m_cbPad.Clear()
+        self.m_txtPadNet.Clear()
+        self.SelectedModule = None
+        self.SelectedPad = None
+        for mod in self.modules:
+            if mod.GetReference() == self.m_cbModule.GetStringSelection():
+                self.SelectedModule = mod
+                pads = mod.Pads()
+                for pad in pads:
+                    pad_name = pad.GetName()
+                    if pad_name != "" and pad_name != None:
+                        self.m_cbPad.Append(pad_name)
+                if not self.m_cbPad.IsEmpty():
+                    self.m_cbPad.SetSelection(0)
+                    self.SelectPad()
                 break
 
+    def PopulateModules(self):
+        for mod in self.modules:
+            self.m_cbModule.Append(mod.GetReference())
+        if not self.m_cbModule.IsEmpty():
+            self.m_cbModule.SetSelection(0)
+        self.PopulatePads()
+
+    def AddNet(self):
+        netname = self.m_txtNetName.GetLineText(0)
+        if netname == "":
+            wx.MessageBox("Please set a netname")
+            return
+        if self.SelectedModule == None or self.SelectedPad == None:
+            wx.MessageBox("Please select a module and a pad")
+            return
+        nets = set()
+        for mod in self.modules:
+            pads = mod.Pads()
+            nets.update([pad.GetNetname() for pad in pads])
+        net = pcbnew.NETINFO_ITEM(self.board, netname)
+        self.SelectedPad.SetNetCode(net.GetNet())
+        wx.MessageBox("Net %s:%d habe been set to: %s->%s" % (netname, net.GetNet(), self.SelectedModule.GetReference(), self.SelectedPad.GetName()))
+        #Todo: save/reload board?
+        self.Destroy()
 
 def InitAddNetDialog(board):
     """Launch the dialog"""

@@ -42,18 +42,21 @@ class addnet_gui ( wx.Dialog ):
 
 		bHSizer3 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_lblComponet = wx.StaticText( self, wx.ID_ANY, u"Component / pad", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_lblComponet.Wrap( -1 )
+		self.m_lblModule = wx.StaticText( self, wx.ID_ANY, u"Module / pad", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_lblModule.Wrap( -1 )
 
-		bHSizer3.Add( self.m_lblComponet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		bHSizer3.Add( self.m_lblModule, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		m_cbComponentChoices = []
-		self.m_cbComponent = wx.ComboBox( self, wx.ID_ANY, u"--", wx.DefaultPosition, wx.DefaultSize, m_cbComponentChoices, 0 )
-		bHSizer3.Add( self.m_cbComponent, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		m_cbModuleChoices = []
+		self.m_cbModule = wx.ComboBox( self, wx.ID_ANY, u"--", wx.DefaultPosition, wx.DefaultSize, m_cbModuleChoices, wx.CB_DROPDOWN|wx.CB_READONLY )
+		bHSizer3.Add( self.m_cbModule, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 		m_cbPadChoices = []
-		self.m_cbPad = wx.ComboBox( self, wx.ID_ANY, u"--", wx.DefaultPosition, wx.DefaultSize, m_cbPadChoices, 0 )
+		self.m_cbPad = wx.ComboBox( self, wx.ID_ANY, u"--", wx.DefaultPosition, wx.DefaultSize, m_cbPadChoices, wx.CB_DROPDOWN|wx.CB_READONLY )
 		bHSizer3.Add( self.m_cbPad, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+
+		self.m_txtPadNet = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_READONLY )
+		bHSizer3.Add( self.m_txtPadNet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL|wx.EXPAND, 5 )
 
 
 		bMainSizer.Add( bHSizer3, 1, 0, 5 )
