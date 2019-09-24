@@ -38,7 +38,7 @@ class addnet_gui ( wx.Dialog ):
 		bHSizer1.Add( self.m_txtNetName, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL|wx.EXPAND, 5 )
 
 
-		bMainSizer.Add( bHSizer1, 1, wx.EXPAND, 5 )
+		bMainSizer.Add( bHSizer1, 1, wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
 		bHSizer3 = wx.BoxSizer( wx.HORIZONTAL )
 
@@ -59,12 +59,14 @@ class addnet_gui ( wx.Dialog ):
 		bHSizer3.Add( self.m_txtPadNet, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL|wx.EXPAND, 5 )
 
 
-		bMainSizer.Add( bHSizer3, 1, 0, 5 )
+		bMainSizer.Add( bHSizer3, 1, wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL|wx.EXPAND, 5 )
 
 		bHSizer2 = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.m_btnOk = wx.Button( self, wx.ID_ANY, u"&Ok", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bHSizer2.Add( self.m_btnOk, 0, wx.ALIGN_CENTER|wx.ALIGN_CENTER_VERTICAL, 5 )
+
+		self.m_btnOk.SetDefault()
+		bHSizer2.Add( self.m_btnOk, 0, wx.ALIGN_CENTER|wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 		self.m_btnCancel = wx.Button( self, wx.ID_ANY, u"&Cancel", wx.DefaultPosition, wx.DefaultSize, 0 )
 		bHSizer2.Add( self.m_btnCancel, 0, wx.ALIGN_CENTER|wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
@@ -72,6 +74,8 @@ class addnet_gui ( wx.Dialog ):
 
 		bMainSizer.Add( bHSizer2, 1, wx.ALIGN_CENTER_HORIZONTAL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
+		self.SetFocus()
+		self.m_txtNetName.SetFocus()
 
 		self.SetSizer( bMainSizer )
 		self.Layout()

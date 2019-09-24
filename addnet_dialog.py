@@ -20,10 +20,10 @@ class AddNetDialog(addnet_gui):
         super(AddNetDialog, self).__init__(None)
         self.board = pcbnew.GetBoard()
         self.modules = self.board.GetModules()
-        self.SetTitle("AddNet (v{0})".format(__version__))
+        self.SetTitle("AddNet v{0}".format(__version__))
         self.Bind(wx.EVT_CLOSE, self.onCloseWindow)
-        self.SelectedPad = None
         self.SelectedModule = None
+        self.SelectedPad = None
         self.m_cbModule.Bind(wx.EVT_COMBOBOX, self.onModuleSelect)
         self.m_cbPad.Bind(wx.EVT_COMBOBOX, self.onPadSelect)
         self.m_btnCancel.Bind(wx.EVT_BUTTON, self.onCloseWindow)
@@ -41,6 +41,13 @@ class AddNetDialog(addnet_gui):
 
     def onPadSelect(self, event):
         self.SelectPad()
+
+    def GetSelectedMod(self):
+        for mod in self.modules:
+            if mod.IsSelected():
+                return mod
+        else:
+            return None
 
     def SelectPad(self):
         if not self.SelectedModule == None:
@@ -81,10 +88,10 @@ class AddNetDialog(addnet_gui):
     def AddNet(self):
         netname = self.m_txtNetName.GetLineText(0)
         if netname == "":
-            wx.MessageBox("Please set a netname")
+            wx.MessageBox("Set a netname")
             return
         if self.SelectedModule == None or self.SelectedPad == None:
-            wx.MessageBox("Please select a module and a pad")
+            wx.MessageBox("Select a module and a pad")
             return
         netcode = -1
         for mod in self.modules:
@@ -98,8 +105,8 @@ class AddNetDialog(addnet_gui):
         newnet = pcbnew.NETINFO_ITEM(self.board, netname, netcode)
         self.board.Add(newnet)
         self.SelectedPad.SetNet(newnet)
-        wx.MessageBox("Net %s:%d have been set to: %s->%s" % (netname, netcode, self.SelectedModule.GetReference(), self.SelectedPad.GetName()))
-        #Todo: save/reload board?
+        wx.MessageBox("Net %s assigned to: %s->%s" % (netname, self.SelectedModule.GetReference(), self.SelectedPad.GetName()))
+        pcbnew.Refresh()
         self.Destroy()
 
 def InitAddNetDialog(board):
