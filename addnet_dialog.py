@@ -96,8 +96,8 @@ class AddNetDialog(addnet_gui):
                     netcode = nc
         netcode += 1
         newnet = pcbnew.NETINFO_ITEM(self.board, netname, netcode)
+        self.board.Add(newnet)
         self.SelectedPad.SetNet(newnet)
-        #self.SelectedPad.SetNetCode(netcode)
         wx.MessageBox("Net %s:%d have been set to: %s->%s" % (netname, netcode, self.SelectedModule.GetReference(), self.SelectedPad.GetName()))
         #Todo: save/reload board?
         self.Destroy()
