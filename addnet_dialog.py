@@ -86,13 +86,18 @@ class AddNetDialog(addnet_gui):
         if self.SelectedModule == None or self.SelectedPad == None:
             wx.MessageBox("Please select a module and a pad")
             return
-        nets = set()
+        netcode = -1
         for mod in self.modules:
             pads = mod.Pads()
-            nets.update([pad.GetNetname() for pad in pads])
-        net = pcbnew.NETINFO_ITEM(self.board, netname)
-        self.SelectedPad.SetNetCode(net.GetNet())
-        wx.MessageBox("Net %s:%d habe been set to: %s->%s" % (netname, net.GetNet(), self.SelectedModule.GetReference(), self.SelectedPad.GetName()))
+            for pad in pads:
+                net = pad.GetNet()
+                nc = net.GetNet()
+                if nc > netcode:
+                    netcode = nc
+        netcode += 1
+        newnet = pcbnew.NETINFO_ITEM(self.board, netname, netcode)
+        self.SelectedPad.SetNet(newnet)
+        wx.MessageBox("Net %s:%d have been set to: %s->%s" % (netname, netcode, self.SelectedModule.GetReference(), self.SelectedPad.GetName()))
         #Todo: save/reload board?
         self.Destroy()
 
