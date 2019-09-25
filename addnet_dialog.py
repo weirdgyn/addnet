@@ -18,16 +18,16 @@ class AddNetDialog(addnet_gui):
     def __init__(self, board):
         """Init the brand new instance"""
         super(AddNetDialog, self).__init__(None)
-        self.board = pcbnew.GetBoard()
-        self.modules = self.board.GetModules()
         self.SetTitle("AddNet v{0}".format(__version__))
         self.Bind(wx.EVT_CLOSE, self.onCloseWindow)
-        self.SelectedModule = None
-        self.SelectedPad = None
         self.m_cbModule.Bind(wx.EVT_COMBOBOX, self.onModuleSelect)
         self.m_cbPad.Bind(wx.EVT_COMBOBOX, self.onPadSelect)
         self.m_btnCancel.Bind(wx.EVT_BUTTON, self.onCloseWindow)
         self.m_btnOk.Bind(wx.EVT_BUTTON, self.onProcessAction)
+        self.board = pcbnew.GetBoard()
+        self.modules = self.board.GetModules()
+        self.SelectedModule = None
+        self.SelectedPad = None
         self.PopulateModules()
 
     def onProcessAction(self, event):

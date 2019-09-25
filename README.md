@@ -58,6 +58,7 @@ Some useful references that helped me coding this plugin:
 2. https://wxpython.org/
 3. http://docs.kicad-pcb.org/doxygen-python/namespacepcbnew.html
 4. https://forum.kicad.info/c/external-plugins
+5. https://github.com/KiCad/kicad-source-mirror/blob/master/Documentation/development/pcbnew-plugins.md
 
 Tool I got inspired by:
 - https://github.com/NilujePerchut/kicad_scripts/tree/master/teardrops
