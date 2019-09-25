@@ -34,7 +34,7 @@ The result is something like that:
 
 ![Addnet result](pictures/addnet_result.PNG?raw=true "AddNet result")
 
-Please note that the net currently assigned to the pad selected is reported in the readonly textbox on the left of the pad combo-box.
+Please note that (prior the plugin assigment) the net currently assigned to the pad selected is reported in the readonly textbox on the left of the pad combo-box.
 
 ## Coding notes
 
