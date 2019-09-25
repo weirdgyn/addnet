@@ -28,11 +28,13 @@ After installing it (just clone this repo in your preferred plugin location) lau
 
 ![AddNet dialog](pictures/addnet_dialog.PNG?raw=true "AddNet dialog")
 
-Just write down a suitable name (in the __net name__ textbox), select a module and a pad on which the net will apply, press __Ok__.
+Just write down a suitable name (in the __net name__ textbox), select a module and a pad on which the net will apply on using combo-boxes below, press __Ok__.
 The plugin will create the new net and apply it to the selected pad.
 The result is something like that:
 
 ![Addnet result](pictures/addnet_result.PNG?raw=true "AddNet result")
+
+Please note that the net currently assigned to the pad selected is reported in the readonly textbox on the left of the pad combo-box.
 
 ## Coding notes
 
