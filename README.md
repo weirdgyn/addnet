@@ -10,6 +10,7 @@ In the correct approach to electronic design, the normal workflow when you becom
 - apply the needed fixes,
 - export it to the ```net``` file
 - rebuild the connectivity in __PCBNew__.
+
 In the real world and more specifically under some work dynamics/cicumstances (hurry hurry!) this workflow can be time wasting or disruptive.
 
 The main *cases-of-use* for this tool are (assuming an intricate schematics as a basis or no schematics at all):
