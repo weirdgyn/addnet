@@ -38,7 +38,7 @@ Please note that (prior the plugin assigment) the net currently assigned to the 
 
 ## Coding notes
 
-If you are willing to make any modification to the GUI trough __wxFormBuilder__ (```addnet.fbp``` file) remember to modify this line (around line 21 ```addnet_gui.py```):
+If you are willing to make any modification to the GUI (you're welcome) trough __wxFormBuilder__ (```addnet.fbp``` file) remember to modify this line (around line 21 ```addnet_gui.py```):
 ```
 self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 ```
