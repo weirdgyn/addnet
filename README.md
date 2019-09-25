@@ -1,5 +1,5 @@
 # AddNet
-KiCAD Add Net plugin
+KiCAD Add Net action-plugin
 
 Allows to add a net on a already existing PCB.
 
@@ -29,6 +29,24 @@ The result is something like that:
 ![Addnet result](pictures/addnet_result.PNG?raw=true "AddNet result")
 
 Hope someone find it useful or at least *inspiring* to create something else.
+
+** WireIt similarity
+This tool share some similarity with __WireIt__ ```Connect with Airwire``` feature (https://github.com/xesscorp/WireIt). Unluckly I've become aware of __WireIt__ existance only after having coded my plugin.
+
+** Coding notes
+If you wish to apply any modification to the GUI trouh __wxFormBuilder__ please remember to modify this line:
+```
+self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+```
+With these:
+```
+if sys.version_info[0] == 2:
+ self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
+else:
+ self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+```
+Please note that you need to ```import sys``` package to make such code working. 
+ 
 
 By[t]e{s}
  Weirdgyn
