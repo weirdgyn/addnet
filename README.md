@@ -28,9 +28,6 @@ The result is something like that:
 
 ![Addnet result](pictures/addnet_result.PNG?raw=true "AddNet result")
 
-## WireIt similarity
-This tool share some similarity with __WireIt__ ```Connect with Airwire``` feature. Unluckly I've become aware of __WireIt__ existance only after having coded my plugin.
-
 ## Coding notes
 If you wish to apply any modification to the GUI trough __wxFormBuilder__ remember to modify this line (around line 21 ```addnet_gui.py```):
 ```
@@ -44,6 +41,9 @@ else:
  self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 ```
 To make it work with Python 2, please note that you need to ```import sys```. 
+
+## WireIt similarity
+This tool share some similarity with __WireIt__ ```Connect with Airwire``` feature. Unluckly I've become aware of __WireIt__ existance only after having coded my plugin.
 
 ## References
 Some useful references that helped me coding this plugin:
