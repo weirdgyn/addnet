@@ -6,9 +6,9 @@ Allows to add a new net on a already existing PCB.
 ## When use this tool (hopefully never!)
 
 In the correct approach to electronic design the normal workflow when a new net is needed during PCB routing you should get back on __EESchema__, apply the needed fixes, export it to the ```net``` file and rebuild the connectivity in __PCBNew__.
-In the real world and more specifically under some work dynamics/cicumstances (hurry hurry!) this workflow can time wasting or disruptive.
+In the real world and more specifically under some work dynamics/cicumstances (hurry hurry!) this workflow can be time wasting or disruptive.
 
-The main cases-of-use for this tool are the following (assuming an intricate schematics as a basis or no schematics at all):
+The main *cases-of-use* for this tool are (assuming an intricate schematics as a basis or no schematics at all):
 - I have not a schematics and I need to modify pcb design;
 - I found a missing connection on my board (often caused by a non correcly designed footprint or symbol);
 - I performed a number of pin net reassignment and/or change of footprint and I found a missing net;
@@ -22,25 +22,25 @@ After installing it (just clone this repo in your preferred plugin location) lau
 
 ![AddNet dialog](pictures/addnet_dialog.PNG?raw=true "AddNet dialog")
 
-Just write down a net name (in the __net name__ textbox), select a module and a pad on which the net will apply, press __Ok__.
+Just write down a suitable name (in the __net name__ textbox), select a module and a pad on which the net will apply, press __Ok__.
 The plugin will create the new net and apply it to the selected pad.
 The result is something like that:
 
 ![Addnet result](pictures/addnet_result.PNG?raw=true "AddNet result")
 
 ## Coding notes
-If you wish to apply any modification to the GUI trough __wxFormBuilder__ remember to modify this line (around line 21 ```addnet_gui.py```):
+If you wish to apply any modification to the GUI trough __wxFormBuilder__ (```addnet.fbp``` file) remember to modify this line (around line 21 ```addnet_gui.py```):
 ```
 self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 ```
-With these:
+In this way:
 ```
 if sys.version_info[0] == 2:
  self.SetSizeHintsSz( wx.DefaultSize, wx.DefaultSize )
 else:
  self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 ```
-To make it work with Python 2, please note that you need to ```import sys```. 
+This modification allows the code to work with Python 2, please note that you need to ```import sys```. 
 
 ## WireIt similarity
 This tool share some similarity with __WireIt__ ```Connect with Airwire``` feature. Unluckly I've become aware of __WireIt__ existance only after having coded my plugin.
