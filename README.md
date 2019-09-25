@@ -69,7 +69,7 @@ Very good tools makers:
 Hope someone find my work useful or at least *inspiring* to create something else/better.
 
 I would like to thank in particular:
-- qu1ck
+- Qu1ck
 - MitjaN
 - NilujePerchut
 - hildogjr
