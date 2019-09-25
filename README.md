@@ -26,6 +26,7 @@ The result is something like that:
 
 ![Addnet result](pictures/addnet_result.PNG?raw=true "AddNet result")
 
+Hope someone find it useful or at least inspiring to create something else.
 
 By[t]e{s}
  Weirdgyn
