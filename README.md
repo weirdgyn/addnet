@@ -13,8 +13,8 @@ The main *cases-of-use* for this tool are (assuming an intricate schematics as a
 - I found a missing connection on my board (often caused by a non correcly designed footprint or symbol);
 - I performed a number of pin net reassignment and/or change of footprint and I found a missing net;
 
-In such cases getting back to __EESchema__ to fix all this can be painful (or even unfeasible) and non error-free (resulting in repeating the process more than once). Having a chance to create a brand new net can speed up the board routing. Prior writing this plugin I was usually doing this by text editing ```.kicad_pcb``` file by hand (not error free at all but quite fast).
-Of course, for the sake of the project, I fix all the mess the right way at a certain point (usually at the end of routing).
+In such cases getting back to __EESchema__ to fix  can be painful (or even unfeasible) and non error-free resulting in repeating the process more than once. Having a chance to create a brand new net can speed up the board routing. Prior writing this plugin I was usually doing this by text editing ```.kicad_pcb``` file by hand (not error free practice but quite fast).
+Of course, for the sake of the project, I fix all the mess the right way at a certain point, usually at the end of routing.
 
 ## How it works
 
@@ -29,7 +29,8 @@ The result is something like that:
 ![Addnet result](pictures/addnet_result.PNG?raw=true "AddNet result")
 
 ## Coding notes
-If you wish to apply any modification to the GUI trough __wxFormBuilder__ (```addnet.fbp``` file) remember to modify this line (around line 21 ```addnet_gui.py```):
+
+If you are willing to make any modification to the GUI trough __wxFormBuilder__ (```addnet.fbp``` file) remember to modify this line (around line 21 ```addnet_gui.py```):
 ```
 self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 ```
@@ -40,10 +41,11 @@ if sys.version_info[0] == 2:
 else:
  self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 ```
-This modification allows the code to work with Python 2, please note that you need to ```import sys```. 
+This modification allows the code to work with Python 2 (that's the standard KiCAD/Python distribution AFAIK), please note that you need to ```import sys```. 
 
 ## WireIt similarity
-This tool share some similarity with __WireIt__ ```Connect with Airwire``` feature. Unluckly I've become aware of __WireIt__ existance only after having coded my plugin.
+
+This tool share some similarity with __WireIt__ ```Connect with Airwire``` feature: unluckly I've become aware of __WireIt__ existance only after having coded my plugin.
 
 ## References
 Some useful references that helped me coding this plugin:
@@ -59,7 +61,7 @@ Very good tools makers:
 - https://github.com/xesscorp/
 
 ## Greetings
-Hope someone find my work useful or at least *inspiring* to create something else.
+Hope someone find my work useful or at least *inspiring* to create something else/better.
 
 That's all folks.
 
