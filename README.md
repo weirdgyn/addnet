@@ -1,4 +1,5 @@
 # AddNet
+
 KiCAD AddNet action-plugin
 
 Allows to add a new net on a already existing PCB.
@@ -23,7 +24,7 @@ Of course, for the sake of the project, I fix all the mess the right way at a ce
 
 ## How it works
 
-After installing it (just clone this repo in your preferred plugin location) launch __KiCAD__ and click on ```Tools->External Plugins->AddNet``` a dilaog like the one below should appear:
+After installing it (just clone this repo in your preferred plugin location) launch __KiCAD__ and click on ```Tools->External Plugins->AddNet``` or click on ![AddNet icon](addnet.png?raw=true) a dilaog like the one below should appear:
 
 ![AddNet dialog](pictures/addnet_dialog.PNG?raw=true "AddNet dialog")
 
@@ -53,6 +54,7 @@ This modification allows the code to work with Python 2 (that's the standard KiC
 This tool share some similarity with __WireIt__ ```Connect with Airwire``` feature: unluckly I've become aware of __WireIt__ existance only after having coded my plugin.
 
 ## References
+
 Some useful references that helped me coding this plugin:
 1. https://sourceforge.net/projects/wxformbuilder/
 2. https://wxpython.org/
@@ -67,6 +69,7 @@ Very good tools makers:
 - https://github.com/xesscorp/
 
 ## Greetings
+
 Hope someone find my work useful or at least *inspiring* to create something else/better.
 
 I would like to thank in particular:
