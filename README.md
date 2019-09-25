@@ -1,7 +1,7 @@
 # AddNet
-KiCAD Add Net action-plugin
+KiCAD AddNet action-plugin
 
-Allows to add a net on a already existing PCB.
+Allows to add a new net on a already existing PCB.
 
 ## When use this tool (hopefully never!)
 
