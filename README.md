@@ -18,11 +18,11 @@ Of course, for the sake of the project, I fix all the mess the right way at a ce
 
 ## How it works
 
-After installing it (just clone this repo in your preferred plugin location) launch __KiCAD__ and click on ```Tools->External Plugins->AddNet```.
+After installing it (just clone this repo in your preferred plugin location) launch __KiCAD__ and click on ```Tools->External Plugins->AddNet``` a dilaog like the one below should appear:
 
 ![AddNet dialog](pictures/addnet_dialog.PNG?raw=true "AddNet dialog")
 
-Just write down a net name (in the __netname__ textbox), select a module and a pad where to apply the net, press __Ok__.
+Just write down a net name (in the __netname__ textbox), select a module and a pad on which the net will apply, press __Ok__.
 The plugin will create the new net and apply it to the selected pad.
 The result is something like that:
 
