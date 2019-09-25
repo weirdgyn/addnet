@@ -18,6 +18,8 @@ Of course, for the sake of the project, I fix all the mess the right way at a ce
 
 ## How it works
 
+After installing it (just clone this repo in your preferred plugin location) launch __KiCAD__ and click on ```Tools->External Plugins->AddNet```.
+
 ![AddNet dialog](pictures/addnet_dialog.PNG?raw=true "AddNet dialog")
 
 Just write down a net name (in the __netname__ textbox), select a module and a pad where to apply the net, press __Ok__.
