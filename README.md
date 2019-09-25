@@ -18,7 +18,7 @@ Of course, for the sake of the project, I fix all the mess at a certain point (u
 
 ## How it works
 
-![AddNet dialog](pictures/addnet_dialog.png?raw=true "AddNet dialog")
+![AddNet dialog](pictures/addnet_dialog.PNG?raw=true "AddNet dialog")
 
 Just write down a net name (in the __netname__ textbox), select a module and a pad where to apply the net, press __Ok__.
 The plugin will create the new net and apply it to the selected pad.
