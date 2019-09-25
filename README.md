@@ -49,7 +49,7 @@ if sys.version_info[0] == 2:
 else:
  self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 ```
-This modification allows the code to work with Python 2 (that's the standard KiCAD/Python distribution AFAIK), please note that you need to ```import sys```. 
+This modification allows the code to work with __Python 2__ (that's the standard KiCAD/Python distribution AFAIK) as long as __Python 3__, please note that you need to ```import sys```. Special thanks to *NilujePerchut* for this hint.
 
 ## WireIt similarity
 
