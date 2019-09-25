@@ -18,7 +18,7 @@ The main *cases-of-use* for this tool are (assuming an intricate schematics as a
 - I found a missing connection on my board (often caused by a non correctly designed footprint or symbol);
 - I performed a number of pin net reassignment and/or change of footprint and I found a net missing;
 
-In such cases getting back to __EESchema__ to fix  can be painful (or even unfeasible) and non error-free resulting in repeating the process more than once. Having a chance to create a brand new net can speed up the board routing. Prior writing this plugin I was usually doing this by text editing ```.kicad_pcb``` file by hand (not error free practice but quite fast).
+In such cases getting back to __EESchema__ to fix  can be painful (or even unfeasible) and non error-free resulting in repeating the process more than once. Having a chance to create a brand new net can speed up the board routing. Prior writing this plugin I was usually doing this by text editing ```.kicad_pcb``` file by hand (not an error free practice but quite fast).
 Of course, for the sake of the project, I fix all the mess the right way at a certain point, usually at the end of routing.
 
 ## How it works
