@@ -34,7 +34,7 @@ Hope someone find it useful or at least *inspiring* to create something else.
 This tool share some similarity with __WireIt__ ```Connect with Airwire``` feature (https://github.com/xesscorp/WireIt). Unluckly I've become aware of __WireIt__ existance only after having coded my plugin.
 
 ## Coding notes
-If you wish to apply any modification to the GUI trouh __wxFormBuilder__ please remember to modify this line:
+If you wish to apply any modification to the GUI trouh __wxFormBuilder__ remember to modify this line (around line 21 ```addnet_gui.py```):
 ```
 self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 ```
@@ -45,8 +45,9 @@ if sys.version_info[0] == 2:
 else:
  self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 ```
-Please note that you need to ```import sys``` package to make such code working. 
- 
+To make it work with Python 2, please note that you need to ```import sys```. 
+
+That's all folks.
 
 By[t]e{s}
  Weirdgyn
