@@ -5,7 +5,11 @@ Allows to add a new net on a already existing PCB.
 
 ## When use this tool (hopefully never!)
 
-In the correct approach to electronic design the normal workflow when you become aware that a new net is needed during PCB routing you should get back on __EESchema__, apply the needed fixes, export it to the ```net``` file and rebuild the connectivity in __PCBNew__.
+In the correct approach to electronic design, the normal workflow when you become aware that a new net is needed during PCB routing is:
+- getting back on __EESchema__,
+- apply the needed fixes,
+- export it to the ```net``` file
+- rebuild the connectivity in __PCBNew__.
 In the real world and more specifically under some work dynamics/cicumstances (hurry hurry!) this workflow can be time wasting or disruptive.
 
 The main *cases-of-use* for this tool are (assuming an intricate schematics as a basis or no schematics at all):
