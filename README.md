@@ -5,8 +5,8 @@ Allows to add a net on a already existing PCB.
 
 ## When use this tool (hopefully never!)
 
-In the correct approach to electronic design the normal workflow when a new net is needed you should get back on __EESchema__ and apply the needed fixes export it to the net file and rebuild the connectivity in __PCBNew__.
-In the real world and more specifically under some work dynamics/cicumstances this workflow can be painful and time wasting.
+In the correct approach to electronic design the normal workflow when a new net is needed you should get back on __EESchema__, apply the needed fixes, export it to the ```net``` file and rebuild the connectivity in __PCBNew__.
+In the real world and more specifically under some work dynamics/cicumstances (hurry hurry!) this workflow can be painful and time wasting.
 
 The main cases-of-use for this ool are the following (assuming an intricate schematics as a basis or no schematics at all):
 1. I have not a schematics and I need to modify pcb design;
