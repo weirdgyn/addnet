@@ -24,7 +24,7 @@ Of course, for the sake of the project, I fix all the mess the right way at a ce
 
 ## How it works
 
-After installing it (just clone this repo in your preferred plugin location) launch __KiCAD__ and click on ```Tools->External Plugins->AddNet``` or click on ![AddNet icon](addnet.png?raw=true) a dilaog like the one below should appear:
+After installing it (just clone this repo in your preferred plugin location) launch __KiCAD__ and click on ```Tools->External Plugins->AddNet``` or click on ![AddNet icon](addnet.png?raw=true) toolbar icon: a dilaog like the one below should appear:
 
 ![AddNet dialog](pictures/addnet_dialog.PNG?raw=true "AddNet dialog")
 
