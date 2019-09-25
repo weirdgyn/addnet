@@ -22,6 +22,10 @@ Of course, for the sake of the project, I fix all the mess at a certain point (u
 
 Just write down a net name (in the __netname__ textbox), select a module and a pad where to apply the net, press __Ok__.
 The plugin will create the new net and apply it to the selected pad.
+The result is something like that:
+
+![Addnet result](pictures/addnet_result.PNG?raw=true "AddNet result")
+
 
 By[t]e{s}
  Weirdgyn
