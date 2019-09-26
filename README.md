@@ -36,6 +36,10 @@ The result is something like that:
 
 Please note that (prior the plugin assigment) the net currently assigned to the pad selected is reported in the readonly textbox on the left of the pad combo-box.
 
+## TODO
+
+Draw a better UI (if anyone willing to contribute please read the following section).
+
 ## Coding notes
 
 If you are willing to make any modification to the GUI (you're welcome) trough __wxFormBuilder__ (```addnet.fbp``` file) remember to modify this line (around line 21 ```addnet_gui.py```):
