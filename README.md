@@ -84,7 +84,7 @@ I would like to thank in particular:
 - NilujePerchut
 - hildogjr
 
-For having shared they knoledge of Python and KiCAD with me: Thanks! 
+For having shared their knoledge of Python and KiCAD with me: Thanks! 
 
 Live long and prosper!
 
