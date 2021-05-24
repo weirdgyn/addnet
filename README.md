@@ -86,6 +86,8 @@ I would like to thank in particular:
 
 For having shared their knoledge of Python and KiCAD with me: Thanks! 
 
+#
+
 Live long and prosper!
 
 That's all folks.
